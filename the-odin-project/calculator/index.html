@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <meta charset="UTF-b">
+    <meta charset=utf-8>
     <meta lang="en">
     <title> Calculator</title>
     <link href='style.css' rel='stylesheet' type='text/css'>
@@ -9,31 +9,40 @@
 
 <body>
     <h1>Calculator</h1>
+    <p id='text'>You can use numeric keyboard too. Believe me, it's more fun!</p>
     <div id='calculator-body'>
-        <div id='screen'></div>
+        <div id='screen'>
+            <p id='display'></p>
+            <p id='solution'></p>
+        </div>
         <div id='keypad'>
-        <div id='functions'>
-            <button id='subtract' class="function">-</button>
-            <button id='add' class="function">+</button>
-            <button id='multiply' class="function">*</button>
-            <button id='divide' class="function">/</button>
-            <button id='backspace' class="function">DEL</button>
-            <button id='clear' class="function">CLEAR</button>
+            <div id='column1'>
+                <div id='function-col'>
+
+                    <button id='+/-' class="operator-button" >+/- <span style="font-style: italic; font-size: 9px;">End</span></button>
+                    <button id='+' class="operator-button">+</button>
+                    <button id='-' class="operator-button">-</button>
+                    <button id='*' class="operator-button">*</button>
+                    <button id='/' class="operator-button">/</button>
+                </div>
+                <button id='key-1' class='number-button'>1</button>
+                <button id='key-2' class='number-button'>2</button>
+                <button id='key-3' class='number-button'>3</button>
+                <button id='key-4'  class='number-button'>4</button>
+                <button id='key-5'  class='number-button'>5</button>
+                <button id='key-6'  class='number-button'>6</button>
+                <button id='key-7'  class='number-button'>7</button>
+                <button id='key-8'  class='number-button'>8</button>
+                <button id='key-9'  class='number-button'>9</button>
+                <button id='key-0'  class='number-button'>0</button>
+                <button id='key-dot' class='number-button'>.</button>
+            </div>
+
+            <div id='column2'>
+                <button id='clear' class="function-button"> AC <span style="font-style: italic; font-size: small;"> Del</span></button>
+                <button id='calc' class="function-button">=</button>
+            </div>
         </div>
-        <div id='numbers'>
-            <button id='one' class='number-button'>1</button>
-            <button id='two' class='number-button'>2</button>
-            <button id='three' class='number-button'>3</button>
-            <button id='four' class='number-button'>4</button>
-            <button id='five' class='number-button'>5</button>
-            <button id='six' class='number-button'>6</button>
-            <button id='seven' class='number-button'>7</button>
-            <button id='eight' class='number-button'>8</button>
-            <button id='nine' class='number-button'>9</button>
-            <button id='zero' class='number-button'>0</button>
-            <button id='enter'>ENTER</button>
-        </div>
-    </div>
     </div>
     <script src='script.js'></script>
 </body>
