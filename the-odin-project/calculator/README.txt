@@ -1,5 +1,6 @@
 This calculator performs basic addition, subtraction, multiplication, and division function. You can use mouse pointer or numeric keyboard for input. 
 The screen is separated into first half section display of numeric and operator and input and the second half section is to display solution as this is a more organised presentation.
+Some basic DOM manipulation is used to display calculator input on screen and adding events to each button for input.
 
 I created separated arrays, one for number input and one for display on the screen. Clicking one numeric button can only register one item in an 
 array, each of one character are stored in one array index. The number has to be passed over to one variable to register the number as onw instead of combination 
@@ -21,18 +22,17 @@ and I suceeded to count the decimal places for each number input.
 I also added condition when pressing the Calculate(=) button repeatedly, the variable do not change as no calculation is performed. After pressing Calculation button, register 
 number into first operator variable shall be reset since the calculation has been done.
 
-Error sign will be displayed when the input ended with operator and pressed Calculate button. Also when division by 0 is impossible so it will be showing an big big ERROR!
+Error sign displays when the input ended with operator and pressed Calculate button. Also when division by 0 is impossible so it will be showing an big big ERROR!
+
+The screen clear up automatically and update the latest numerical input when text is filling up the screen.
 
 Keyboard input was decided in the end since I think adding this would make me actually use what I made and indeed it is so handy and convenient.
 My wrist don't need that kind of torture of locking my wrist in that position for eternity when I needed some intensive calculation... (OK I'm exaggerating, but I guess most people is 
-lazy just like me, hahaha)
+lazy just like me)
 
-I tried to make my calculator as bug free and as accessible to use, and I am very proud of it! I think I will actually use it.
+I tried to make this calculator as bug free and as easy to use, and I am very proud of it! I think I will actually use it.
 
 This project has enhanced my understanding and ability to construct arguments using logical operators.
-
-Anyway, I guess you should have noticed one of the operator button's (+/-) position is kinda awkward. I tried to align it but failed. I guess I will come back to fix it when I have time. Pardon me for the weird looking 
-button. The position changed due to the extra word on the button, but I need that word to be there and I tried adjusting the font size and button size to no avail. 
 
 Thanks for reading and I hope you have a nice day! :)
 
