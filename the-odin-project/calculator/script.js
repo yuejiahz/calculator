@@ -87,7 +87,7 @@ function operatorInput(e) {
         }
         //register the latest operator input during multiple input 
         if (firstOperator && !number) {
-            numberCount = numberCount - 1;
+            numberCount--;
             displayArrays(status);
             calculationCount = 0;
             firstOperator = '';
@@ -111,7 +111,7 @@ function negativeNumber(num) {
    console.log(numberArray);
    count++;
 }
-  else if (numberArray[0]=='-') {
+    else if (numberArray[0]=='-') {
       numberArray.splice(0,1);
    console.log(numberArray);
   }
@@ -132,13 +132,10 @@ function operate(e) {
     }
     calculationCount = 1;
 
-    if (e) {
-        calculationCount = 0;
-        numberCount=numberCount+2;
-    }
+    if (e) calculationCount = 0;
 
     //setting the only number input as answer
-    if (firstNum && !firstOperator && !secondNum & !secondOperator) {
+    if (firstNum && !firstOperator && !secondNum & !secondOperator && e) {
         answer = firstNum;
     }   
      if (firstNum && firstOperator && e && isNaN(displayArray[numberCount-1])) {
@@ -177,9 +174,17 @@ function operate(e) {
 
 //display calculation on screen
 function displayArrays(content) {
+   if(numberCount<25){
     displayArray[numberCount] = `${content}`;
     document.getElementById('display').textContent = displayArray.join("");
     numberCount++;
+   }
+    if(numberCount==25){
+        numberCount=0;
+        displayArray=[];
+        displayArray[numberCount]=number+num;
+        numberCount++;
+    }
 }
 
 //display solution on screen

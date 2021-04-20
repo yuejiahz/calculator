@@ -104,6 +104,8 @@
     width: 290px;
     height: 65px;
     font-size: 30px;
+    word-wrap: break-word
+
  }
 
  #solution{
@@ -112,5 +114,5 @@
     height: 65px; 
     font-size: 40px;
     text-align: right;
-   
+    word-wrap: break-word
  }
