@@ -174,12 +174,12 @@ function operate(e) {
 
 //display calculation on screen
 function displayArrays(content) {
-   if(numberCount<25){
+   if(numberCount<27){
     displayArray[numberCount] = `${content}`;
     document.getElementById('display').textContent = displayArray.join("");
     numberCount++;
    }
-    if(numberCount==25){
+    if(numberCount==27){
         numberCount=0;
         displayArray=[];
         displayArray[numberCount]=number+num;
