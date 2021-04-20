@@ -15,8 +15,6 @@ window.addEventListener('keydown', numpadInput);
 //create arrays and variables
 var numberArray = [];
 var displayArray = [];
-var storedNumber = [];
-var StoredOperator = [];
 let num, firstNum, secondNum, number, firstOperator, secondOperator, answer;
 let count = 0;
 let numberCount = 0;
