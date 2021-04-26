@@ -17,7 +17,7 @@ The positive or negative sign is interchangable by clicking the +/- button after
 do not affect the registered value. The negative sign can be added to all numbers in either first or later orders displayed on screen.
 
 I fixed 8 decimal places if the answer contains any. While I wanted to count the number of decimal places of each input and return the answer by the largest decimal places,
-and I suceeded to count the decimal places for each number input.
+and I suceeded to count the decimal places for each number input. I also made only one '.' input is allowed for one number.
 
 I also added condition when pressing the Calculate(=) button repeatedly, the variable do not change as no calculation is performed. After pressing Calculation button, register 
 number into first operator variable shall be reset since the calculation has been done.
