@@ -21,6 +21,7 @@ let numberCount = 0;
 let calculationCount = 0;
 let decimalCount = 0;
 let decimalCountIndex;
+let calc=false;
 
  function numpadInput(e){
     if(e.key=='+'||e.key=='-'||e.key=='*'||e.key=='/'||e.key=='End') {
@@ -66,20 +67,34 @@ function numberInput(e) {
     if (num == '.') {
         decimalCountIndex = count;
         decimalCount = 1;
-        console.log(decimalCountIndex);
     }
+    if(calc && !isNaN(displayArray[numberCount-1])) {
+        refreshScreen();
+        solutionDisplay('');
+        secondNum='';
+        firstOperator='';
+        secondOperator='';
+        answer='';
+        calc=false;
+        document.getElementById('text').textContent ="New calculation here, time to refresh the screen!";
+    } 
 }
 
 function operatorInput(e) {
+    calc=false;
     if(e){
         if(e.type=='click') status = e.target.id;
     }
  
     //call to set negative or positive number
-    if (status == '+/-' && number) {
+    if (status == '+/-'){
+        status='';
+         if(number) {
         number = negativeNumber(number);
+        } 
     }
-    else {
+    else
+    {
         if ((!firstOperator && !isNaN(displayArray[numberCount-1]) || (firstOperator && !isNaN(displayArray[numberCount-1])))) {
             displayArrays(status);
         }
@@ -97,26 +112,26 @@ function operatorInput(e) {
 
 //change number into positive or negative value
 function negativeNumber(num) {
+    document.getElementById('text').textContent ="Changing positive/negative value of the number here...";
     num = num * -1;
     for (i = numberCount - count; i <= numberCount; i++) {
         displayArray[i] = '';
     }
-    numberCount--;
     displayArrays(num);
  
    if(!(numberArray[0]=='-')){ 
        numberArray.splice(0,0,'-');
-   console.log(numberArray);
    count++;
 }
     else if (numberArray[0]=='-') {
       numberArray.splice(0,1);
-   console.log(numberArray);
   }
     return num;
 }
 
 function operate(e) {
+    document.getElementById('text').textContent ="You can use numeric keyboard too. Believe me, it's more fun!";
+
     //assign numbers and operator into variables into first and second order 
     if (!firstOperator && calculationCount === 0) {
         if (number) firstNum = number;
@@ -130,8 +145,10 @@ function operate(e) {
     }
     calculationCount = 1;
 
-    if (e) calculationCount = 0;
-
+    if (e) {
+        calc=true;
+        calculationCount = 0;
+    }
     //setting the only number input as answer
     if (firstNum && !firstOperator && !secondNum & !secondOperator && e) {
         answer = firstNum;
@@ -164,6 +181,10 @@ function operate(e) {
     }
      else if(answer=='ERROR') solutionDisplay(answer);
 
+    else if (e && firstNum) {
+        answer=firstNum;
+        solutionDisplay(answer);
+    }
     numberArray = [];
     count = 0;
     number = '';
@@ -177,12 +198,18 @@ function displayArrays(content) {
     document.getElementById('display').textContent = displayArray.join("");
     numberCount++;
    }
-    if(numberCount==27){
-        numberCount=0;
-        displayArray=[];
-        displayArray[numberCount]=number+num;
-        numberCount++;
+    if(numberCount==27) {
+        refreshScreen();
+        document.getElementById('text').textContent ="Opps the screen was too full. Refresh the screen!";
     }
+}
+
+function refreshScreen(){
+    numberCount=0;
+    displayArray=[];
+    displayArray[numberCount]=num;
+    document.getElementById('display').textContent = displayArray.join("");
+    numberCount++;
 }
 
 //display solution on screen
