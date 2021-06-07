@@ -33,8 +33,7 @@ Keyboard input was decided in the end since I think adding this would make me ac
 My wrist don't need that kind of torture of locking my wrist in that position for eternity when I needed some intensive calculation... (OK I'm exaggerating, but I guess most people is 
 lazy just like me)
 
-I tried to make this calculator as bug free and as easy to use, and I am very proud of it! I think I will actually use it.
-
+I tried to make this calculator as bug free and as easy to use, and I am very proud of it!
 
 
 
