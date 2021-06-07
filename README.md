@@ -1,4 +1,6 @@
 [View demo](https://yuejiahz.github.io/calculator/)
+
+#Description
 This calculator performs basic addition, subtraction, multiplication, and division function. You can use mouse pointer or numeric keyboard for input. 
 The screen is separated into first half section display of numeric and operator and input and the second half section is to display solution as this is a more organised presentation.
 Some basic DOM manipulation is used to display calculator input on screen and adding events to each button for input.
