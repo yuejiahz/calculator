@@ -111,9 +111,11 @@
  }
 
  #solution{
-    box-sizing: border-box;
+    position: relative;
+    bottom: 0;
+    overflow: hidden;
     width: 290px;
-    height: 65px; 
+    height: 50px; 
     font-size: 40px;
     text-align: right;
     word-wrap: break-word
